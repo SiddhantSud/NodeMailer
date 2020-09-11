@@ -12,7 +12,7 @@ var unsent_emails=[]
 var sent_emails=[]
 var emails=[]
 
-fs.createReadStream("final_db.csv")
+fs.createReadStream(".csv")// add file path
   .pipe(csv())
   .on("data", (row) => {
   emails.push(row.Emails);
@@ -21,10 +21,10 @@ fs.createReadStream("final_db.csv")
 
     var transporter = nodemailer.createTransport({
       service: "SMTP",
-      host:'email-smtp.ap-south-1.amazonaws.com',// Host name
+      host:'',// Host name
       auth: {
-        user: "AKIA4LVD7SDQSW7WZAHA", // Username 
-        pass: "BIAv0GQpXnEhOByT83XTrxi4XSwFsKdKAXYj76vfON9b"// password 
+        user: "", // Username 
+        pass: ""// password 
       },
       maxConnections : 3,
       maxMessages :7,
@@ -38,11 +38,11 @@ fs.createReadStream("final_db.csv")
 
 
     var mailOptions = {
-      from: "Enter sender email Id",
+      from: "",//Enter sender email Id
       to: "",
-      subject: "WEBINAR: Leveraging current and future solar opportunities for sustainable business",
+      subject: "",
       template:'index',
-      ConfigurationSetName:'Dexler_Version1'
+      //ConfigurationSetName:'' ( meant for bounce tracking)
     };
 
     console.log("CSV file successfully processed");
@@ -62,12 +62,6 @@ fs.createReadStream("final_db.csv")
           console.log("All emails processed!");
           console.log(unsent_emails);
         }
-        // else if(unsent_emails.length>=300){
-        //   console.log("ded");
-        //   console.log(unsent_emails);
-        //   console.log(sent_emails);
-        //   process.exit();
-        // }
         else{
           console.log("Sent:",sent_emails.length);
           console.log("Unsent",unsent_emails.length);
