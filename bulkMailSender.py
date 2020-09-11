@@ -28,10 +28,10 @@ for ema in emails:
 
      RECIPIENT  = ema
      # Replace smtp_username with your Amazon SES SMTP user name.
-     USERNAME_SMTP = "AKIA4LVD7SDQSW7WZAHA"
+     USERNAME_SMTP = ""
 
      # Replace smtp_password with your Amazon SES SMTP password.
-     PASSWORD_SMTP = "BIAv0GQpXnEhOByT83XTrxi4XSwFsKdKAXYj76vfON9b"
+     PASSWORD_SMTP = ""
 
      # (Optional) the name of a configuration set to use for this message.
      # If you comment out this line, you also need to remove or comment out
@@ -41,7 +41,7 @@ for ema in emails:
      # If you're using Amazon SES in an AWS Region other than US West (Oregon),
      # replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
      # endpoint in the appropriate region.
-     HOST = "email-smtp.ap-south-1.amazonaws.com"
+     HOST = ""
      PORT = 587
 
      # The subject line of the email.
