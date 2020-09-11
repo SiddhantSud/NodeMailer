@@ -21,7 +21,7 @@ fs.createReadStream(".csv")//database
     var transporter = nodemailer.createTransport({
       service: 'outlook',
       auth: {
-        user: '',//Outlook Email adress
+        user: '',//Outlook Email address
         pass: ''// Outlook password
       },
       maxConnections : 3,
@@ -36,11 +36,11 @@ fs.createReadStream(".csv")//database
 
 
     var mailOptions = {
-      from: "Enter sender email Id",
+      from: "",//Enter sender email Id
       to: "",
-      subject: "WEBINAR: Leveraging current and future solar opportunities for sustainable business",
+      subject: "",
       template:'index',
-      ConfigurationSetName:'Dexler_Version1'
+      //ConfigurationSetName:'' (meant for bounce tracking, ignore if not using)
     };
 
     console.log("CSV file successfully processed");
